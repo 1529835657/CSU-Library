@@ -1,375 +1,250 @@
 port: 7890
 socks-port: 7891
+redir-port: 7892
 allow-lan: true
 mode: Rule
 log-level: info
 external-controller: 0.0.0.0:9090
+experimental:
+  ignore-resolve-fail: true 
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  nameserver:
+    - 114.114.114.114 
+    - 8.8.8.8 
+    - tls://dns.rubyfish.cn:853 
+    - https://1.1.1.1/dns-query 
+  fallback:
+    - tls://13800000000.rubyfish.cn:853
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+
 proxies:
-  - { name: 🇦🇹 AT 001,type: ss,server: 37.120.212.162,port:8389,cipher: chacha20-ietf-poly1305,password: 2XtmwMEgsVJYKWF4VjkL}
-  - { name: 🇦🇺 AU 002,type: ss,server: 172.105.171.80,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇦🇺 AU 003,type: ss,server: 172.105.180.227,port:3389,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇦🇺 AU 004,type: ss,server: 172.105.180.227,port:8118,cipher: aes-256-gcm,password: cdBIDV42DCwnfIN}
-  - { name: 🇦🇺 AU 005,type: ss,server: 172.105.180.227,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇦🇺 AU 006,type: ss,server: 172.105.180.227,port:8888,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇦🇺 AU 007,type: ss,server: 172.105.180.227,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇦🇺 AU 008,type: ss,server: 172.105.180.227,port:8881,cipher: aes-256-gcm,password: kDWvXYZoTBcGkC4}
-  - { name: 🇨🇦 CA 009,type: ss,server: 142.202.48.34,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇨🇦 CA 010,type: ss,server: 198.57.27.241,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇨🇦 CA 011,type: ss,server: 134.195.196.81,port:8091,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇨🇦 CA 012,type: ss,server: 134.195.196.71,port:8119,cipher: aes-256-gcm,password: cdBIDV42DCwnfIN}
-  - { name: 🇨🇦 CA 013,type: ss,server: 134.195.196.81,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇨🇦 CA 014,type: ss,server: 198.57.27.184,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇨🇦 CA 015,type: ss,server: 198.57.27.241,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇨🇦 CA 016,type: ss,server: 198.57.27.172,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇨🇦 CA 017,type: ss,server: 198.57.27.184,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇨🇦 CA 018,type: ss,server: 134.195.196.147,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇨🇦 CA 019,type: ss,server: 198.57.27.172,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇨🇦 CA 020,type: ss,server: 198.57.27.184,port:8080,cipher: aes-256-gcm,password: KixLvKzwjekG00rm}
-  - { name: 🇨🇦 CA 021,type: ss,server: 134.195.196.193,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇨🇦 CA 022,type: ss,server: 198.57.27.184,port:3389,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇨🇦 CA 023,type: ss,server: 184.75.208.234,port:8388,cipher: chacha20-ietf-poly1305,password: 47GH3wQRw7V4Zhd35bFs}
-  - { name: 🇨🇦 CA 024,type: ss,server: 198.57.27.152,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇨🇦 CA 025,type: ss,server: 217.138.200.242,port:8389,cipher: chacha20-ietf-poly1305,password: EGTHtnGhcnggx5yBYSqS}
-  - { name: 🇨🇭 CH 026,type: ss,server: 37.120.137.82,port:8388,cipher: chacha20-ietf-poly1305,password: EGTHtnGhcnggx5yBYSqS}
-  - { name: 🇩🇪 DE 027,type: ss,server: 145.239.1.100,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇩🇪 DE 028,type: ss,server: 145.239.1.137,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇩🇪 DE 029,type: ss,server: 145.239.1.137,port:8080,cipher: aes-256-gcm,password: KixLvKzwjekG00rm}
-  - { name: 🇩🇪 DE 030,type: ss,server: 145.239.1.137,port:8091,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇩🇪 DE 031,type: ss,server: 141.95.0.26,port:826,cipher: chacha20-ietf-poly1305,password: sF43Xt2gONqcgFX563}
-  - { name: 🇩🇪 DE 032,type: ss,server: 45.141.152.178,port:8388,cipher: chacha20-ietf-poly1305,password: FTvsfXCvXLPFEMKNSADr}
-  - { name: 🇫🇷 FR 033,type: ss,server: 62.210.209.50,port:8009,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
-  - { name: 🇫🇷 FR 034,type: ss,server: 149.202.82.172,port:5001,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇫🇷 FR 035,type: ss,server: 95.142.175.14,port:443,cipher: chacha20-ietf-poly1305,password: tkAx1ehPPkMN}
-  - { name: 🇫🇷 FR 036,type: ss,server: 149.202.82.172,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇫🇷 FR 037,type: ss,server: 145.239.1.100,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇫🇷 FR 038,type: ss,server: 145.239.1.137,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇫🇷 FR 039,type: ss,server: 145.239.1.137,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇬🇷 GR 040,type: ss,server: 185.51.134.210,port:8388,cipher: chacha20-ietf-poly1305,password: mTrN2fMYeWJwrkWpTnL2}
-  - { name: 🇭🇰 HK 041,type: ss,server: 84.17.37.55,port:8388,cipher: chacha20-ietf-poly1305,password: tjwRqQvteAjt3xFmbZTA}
-  - { name: 🇭🇺 HU 042,type: ss,server: 185.128.26.130,port:8389,cipher: chacha20-ietf-poly1305,password: GU3kqh2ZSkzFkRBp4hxy}
-  - { name: 🇮🇩 ID 043,type: ss,server: 45.133.181.58,port:8389,cipher: chacha20-ietf-poly1305,password: qzj5NqakK4YvYYU87eFF}
-  - { name: 🇮🇱 IL 044,type: ss,server: 212.199.61.55,port:8389,cipher: chacha20-ietf-poly1305,password: scDj68fv6xkMg2np9RgW}
-  - { name: 🇯🇵 JP 045,type: ss,server: 172.105.244.165,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇲🇾 MY 046,type: ss,server: 223.25.246.4,port:8388,cipher: chacha20-ietf-poly1305,password: w4GUD28Bw9uCMdbc2pqA}
-  - { name: 🇳🇴 NO 047,type: ss,server: 46.29.219.246,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇳🇴 NO 048,type: ss,server: 46.29.219.246,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇵🇭 PH 049,type: ss,server: 188.214.125.106,port:8388,cipher: chacha20-ietf-poly1305,password: Zq4srheW4eeqMfGeWMTG}
-  - { name: 🇵🇭 PH 050,type: ss,server: 188.214.125.106,port:8389,cipher: chacha20-ietf-poly1305,password: Zq4srheW4eeqMfGeWMTG}
-  - { name: 🇸🇪 SE 051,type: ss,server: 167.88.63.61,port:8009,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
-  - { name: 🇸🇪 SE 052,type: ss,server: 167.88.63.74,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇸🇪 SE 053,type: ss,server: 167.88.63.61,port:8882,cipher: aes-256-gcm,password: kDWvXYZoTBcGkC4}
-  - { name: 🇹🇼 TW 054,type: ss,server: 188.214.106.98,port:8388,cipher: chacha20-ietf-poly1305,password: cNbqVVyUfbJFZ6S8EgRH}
-  - { name: 🇺🇸 US 055,type: ss,server: 167.88.63.61,port:8009,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
-  - { name: 🇺🇸 US 056,type: ss,server: 172.99.190.39,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 057,type: ss,server: 172.99.190.87,port:8008,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
-  - { name: 🇺🇸 US 058,type: ss,server: 134.195.196.81,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇺🇸 US 059,type: ss,server: 142.202.48.34,port:3389,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 060,type: ss,server: 38.75.136.93,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 061,type: ss,server: 38.75.136.93,port:9102,cipher: aes-256-gcm,password: e4FCWrgpkji3QY}
-  - { name: 🇺🇸 US 062,type: ss,server: 198.57.27.184,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 063,type: ss,server: 169.197.141.91,port:5001,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 064,type: ss,server: 167.88.61.60,port:5601,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 065,type: ss,server: 198.57.27.184,port:8080,cipher: aes-256-gcm,password: KixLvKzwjekG00rm}
-  - { name: 🇺🇸 US 066,type: ss,server: 167.88.61.60,port:8118,cipher: aes-256-gcm,password: cdBIDV42DCwnfIN}
-  - { name: 🇺🇸 US 067,type: ss,server: 38.121.43.71,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 068,type: ss,server: 172.99.190.109,port:7306,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇺🇸 US 069,type: ss,server: 38.91.101.11,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 070,type: ss,server: 167.88.61.60,port:8882,cipher: aes-256-gcm,password: kDWvXYZoTBcGkC4}
-  - { name: 🇺🇸 US 071,type: ss,server: 38.107.226.48,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 072,type: ss,server: 172.99.190.149,port:3306,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 073,type: ss,server: 167.88.61.60,port:9102,cipher: aes-256-gcm,password: e4FCWrgpkji3QY}
-  - { name: 🇺🇸 US 074,type: ss,server: 172.99.190.109,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 075,type: ss,server: 172.99.190.84,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 076,type: ss,server: 167.88.62.34,port:8091,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 077,type: ss,server: 38.121.43.71,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇺🇸 US 078,type: ss,server: 167.88.61.60,port:7002,cipher: aes-256-gcm,password: RexnBgU7EV5ADxG}
-  - { name: 🇺🇸 US 079,type: ss,server: 198.57.27.172,port:8881,cipher: aes-256-gcm,password: kDWvXYZoTBcGkC4}
-  - { name: 🇺🇸 US 080,type: ss,server: 38.68.134.23,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 081,type: ss,server: 38.75.136.45,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 082,type: ss,server: 172.99.190.39,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 083,type: ss,server: 172.99.190.87,port:9101,cipher: aes-256-gcm,password: e4FCWrgpkji3QY}
-  - { name: 🇺🇸 US 084,type: ss,server: 134.195.196.81,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 085,type: ss,server: 172.99.190.188,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 086,type: ss,server: 38.121.43.71,port:3306,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 087,type: ss,server: 38.68.134.191,port:8080,cipher: aes-256-gcm,password: KixLvKzwjekG00rm}
-  - { name: 🇺🇸 US 088,type: ss,server: 38.68.134.23,port:443,cipher: aes-256-gcm,password: pKEW8JPByTVTLtM}
-  - { name: 🇺🇸 US 089,type: ss,server: 198.57.27.241,port:2375,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🇺🇸 US 090,type: ss,server: 169.197.141.91,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 091,type: ss,server: 167.88.61.60,port:8091,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 092,type: ss,server: 167.88.62.34,port:3306,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇺🇸 US 093,type: ss,server: 172.99.190.149,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 094,type: ss,server: 38.75.136.93,port:7002,cipher: aes-256-gcm,password: RexnBgU7EV5ADxG}
-  - { name: 🇺🇸 US 095,type: ss,server: 172.104.207.231,port:443,cipher: aes-256-gcm,password: pKEW8JPByTVTLtM}
-  - { name: 🇺🇸 US 096,type: ss,server: 38.107.226.48,port:8080,cipher: aes-256-gcm,password: KixLvKzwjekG00rm}
-  - { name: 🇺🇸 US 097,type: ss,server: 38.75.136.45,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 098,type: ss,server: 167.88.63.28,port:7306,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🇺🇸 US 099,type: ss,server: 23.226.131.146,port:8388,cipher: chacha20-ietf-poly1305,password: ckX2YfENbjCtVzVJphFP}
-  - { name: 🇺🇸 US 100,type: ss,server: 167.88.63.74,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 101,type: ss,server: 102.129.144.142,port:8389,cipher: chacha20-ietf-poly1305,password: QzTsOpqsdj29bWqIqWR6}
-  - { name: 🇺🇸 US 102,type: ss,server: 38.91.100.102,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🇺🇸 US 103,type: ss,server: 38.107.226.48,port:5003,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🇺🇸 US 104,type: ss,server: 192.46.209.227,port:8008,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
-  - { name: 🇺🇸 US 105,type: ss,server: 192.46.209.227,port:3389,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🇻🇳 VN 106,type: ss,server: 188.214.152.194,port:8388,cipher: chacha20-ietf-poly1305,password: t8BFcaM3GSCw5FHbph27}
-  - { name: 🇿🇦 ZA  107,type: ss,server: 102.165.20.38,port:8388,cipher: chacha20-ietf-poly1305,password: VLGVpK9npKaFqBLHcnu9}
-  - { name: 🏁 ZZ 108,type: ss,server: 134.195.196.193,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
-  - { name: 🏁 ZZ 109,type: ss,server: 169.197.141.91,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
-  - { name: 🏁 ZZ 110,type: ss,server: 134.195.196.71,port:443,cipher: aes-256-gcm,password: pKEW8JPByTVTLtM}
-  - { name: 🏁 ZZ 111,type: ss,server: 134.195.196.71,port:5001,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🏁 ZZ 112,type: ss,server: 134.195.196.71,port:8119,cipher: aes-256-gcm,password: cdBIDV42DCwnfIN}
-  - { name: 🏁 ZZ 113,type: ss,server: 134.195.196.147,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🏁 ZZ 114,type: ss,server: 169.197.141.91,port:5001,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🏁 ZZ 115,type: ss,server: 134.195.196.193,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
-  - { name: 🏁 ZZ 116,type: ss,server: 134.195.196.71,port:3389,cipher: aes-256-gcm,password: Y6R9pAtvxxzmGC}
-  - { name: 🏁 ZZ 117,type: ss,server: 134.195.196.81,port:7307,cipher: aes-256-gcm,password: FoOiGlkAA9yPEGP}
-  - { name: 🏁 ZZ 118,type: ss,server: 134.195.196.81,port:8091,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27SnfoS27}
+  - {name: 🇯🇵 JP 01, type: ss, server: 45.67.53.250, port: 443, cipher: aes-256-cfb, password: www.xbvpn.com}
+  - {name: 🇯🇵 JP 02, type: ss, server: sgp2.oyvpnserver.com, port: 3572, cipher: rc4-md5, password: cht1997...///}
+  - {name: 🇺🇸 US 01, type: ss, server: 167.88.63.61, port: 8009, cipher: aes-256-gcm, password: XKFKl2rULjIp74}
+  - {name: 🇺🇸 US 02, type: ss, server: 172.99.190.39, port: 5003, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇺🇸 US 03, type: ss, server: 134.195.196.81, port: 7307, cipher: aes-256-gcm, password: FoOiGlkAA9yPEGP}
+  - {name: 🇺🇸 US 04, type: ss, server: 142.202.48.34, port: 3389, cipher: aes-256-gcm, password: Y6R9pAtvxxzmGC}
+  - {name: 🇺🇸 US 05, type: ss, server: 38.75.136.93, port: 9102, cipher: aes-256-gcm, password: e4FCWrgpkji3QY}
+  - {name: 🇺🇸 US 06, type: ss, server: 198.57.27.184, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇺🇸 US 07, type: ss, server: 169.197.141.91, port: 5001, cipher: aes-256-gcm, password: Y6R9pAtvxxzmGC}
+  - {name: 🇺🇸 US 08, type: ss, server: 198.57.27.184, port: 8080, cipher: aes-256-gcm, password: KixLvKzwjekG00rm}
+  - {name: 🇺🇸 US 09, type: ss, server: 38.121.43.71, port: 5004, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇺🇸 US 10, type: ss, server: 167.88.61.60, port: 8118, cipher: aes-256-gcm, password: cdBIDV42DCwnfIN}
+  - {name: 🇺🇸 US 11, type: ss, server: 198.57.27.172, port: 8881, cipher: aes-256-gcm, password: kDWvXYZoTBcGkC4}
+  - {name: 🇺🇸 US 12, type: ss, server: 38.68.134.23, port: 5003, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇺🇸 US 13, type: ss, server: 172.99.190.39, port: 2375, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇺🇸 US 14, type: ss, server: 134.195.196.81, port: 2375, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇺🇸 US 15, type: ss, server: 172.99.190.188, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇺🇸 US 16, type: ss, server: 38.121.43.71, port: 3306, cipher: aes-256-gcm, password: Y6R9pAtvxxzmGC}
+  - {name: 🇺🇸 US 17, type: ss, server: 38.68.134.191, port: 8080, cipher: aes-256-gcm, password: KixLvKzwjekG00rm}
+  - {name: 🇺🇸 US 18, type: ss, server: 167.88.61.60, port: 9102, cipher: aes-256-gcm, password: e4FCWrgpkji3QY}
+  - {name: 🇺🇸 US 19, type: ss, server: 172.99.190.149, port: 3306, cipher: aes-256-gcm, password: Y6R9pAtvxxzmGC}
+  - {name: 🇺🇸 US 20, type: ss, server: 38.68.134.23, port: 443, cipher: aes-256-gcm, password: pKEW8JPByTVTLtM}
+  - {name: 🇺🇸 US 21, type: ss, server: 38.75.136.93, port: 5004, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇺🇸 US 22, type: ss, server: 38.107.226.48, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇺🇸 US 23, type: ss, server: 198.57.27.241, port: 2375, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇺🇸 US 24, type: ss, server: 169.197.141.91, port: 5004, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇺🇸 US 25, type: ss, server: 167.88.61.60, port: 8091, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇺🇸 US 26, type: ss, server: 38.75.136.93, port: 9102, cipher: aes-256-gcm, password: e4FCWrgpkji3QY}
+  - {name: 🇸🇪 SE 01, type: ss, server: 167.88.63.61, port: 8009, cipher: aes-256-gcm, password: XKFKl2rULjIp74}
+  - {name: 🇸🇪 SE 02, type: ss, server: 167.88.63.74, port: 5003, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇸🇪 SE 03, type: ss, server: 167.88.63.61, port: 8882, cipher: aes-256-gcm, password: kDWvXYZoTBcGkC4}
+  - {name: 🇫🇷 FR 01, type: ss, server: 62.210.209.50, port: 8009, cipher: aes-256-gcm, password: XKFKl2rULjIp74}
+  - {name: 🇫🇷 FR 02, type: ss, server: 149.202.82.172, port: 5001, cipher: aes-256-gcm, password: Y6R9pAtvxxzmGC}
+  - {name: 🇫🇷 FR 03, type: ss, server: 95.142.175.14, port: 443, cipher: chacha20-ietf-poly1305, password: tkAx1ehPPkMN}
+  - {name: 🇫🇷 FR 04, type: ss, server: 62.210.209.50, port: 8009, cipher: aes-256-gcm, password: XKFKl2rULjIp74}
+  - {name: 🇫🇷 FR 05, type: ss, server: 149.202.82.172, port: 5003, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
+  - {name: 🇨🇦 CAN 01, type: ss, server: 142.202.48.34, port: 7307, cipher: aes-256-gcm, password: FoOiGlkAA9yPEGP}
+  - {name: 🇨🇦 CAN 02, type: ss, server: 198.57.27.241, port: 2375, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇨🇦 CAN 03, type: ss, server: 134.195.196.81, port: 8091, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇨🇦 CAN 04, type: ss, server: 134.195.196.71, port: 8119, cipher: aes-256-gcm, password: cdBIDV42DCwnfIN}
+  - {name: 🇨🇦 CAN 05, type: ss, server: 134.195.196.81, port: 7307, cipher: aes-256-gcm, password: FoOiGlkAA9yPEGP}
+  - {name: 🇨🇦 CAN 06, type: ss, server: 198.57.27.184, port: 2375, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇨🇦 CAN 07, type: ss, server: 198.57.27.241, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇨🇦 CAN 08, type: ss, server: 198.57.27.172, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇨🇦 CAN 09, type: ss, server: 198.57.27.184, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇨🇦 CAN 10, type: ss, server: 134.195.196.147, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇨🇦 CAN 11, type: ss, server: 198.57.27.184, port: 8080, cipher: aes-256-gcm, password: KixLvKzwjekG00rm}
+  - {name: 🇨🇦 CAN 12, type: ss, server: 134.195.196.193, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
+  - {name: 🇦🇺 AUS 01, type: vmess, server: 202.61.141.130, port: 443, uuid: aba50dd4-5484-3b05-b14a-4661caf862d5, alterId: 4, cipher: auto, udp: true, tls: true, network: ws, ws-path: /ws, ws-headers: {Host: 202.61.141.130}}
+  - {name: 🇦🇺 AUS 02, type: ss, server: 172.105.171.80, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
+  - {name: 🇩🇪 GER 01, type: ss, server: 145.239.1.100, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
 proxy-groups:
-  - name: 🚀 节点选择
+  # select 用来允许用户手动选择 代理服务器 或 服务器组
+  - name: 🛸 节点选择
     type: select
     proxies:
       - 🪄 自动选择
-      - DIRECT
-      - 🇦🇹 AT 001
-      - 🇦🇺 AU 002
-      - 🇦🇺 AU 003
-      - 🇦🇺 AU 004
-      - 🇦🇺 AU 005
-      - 🇦🇺 AU 006
-      - 🇦🇺 AU 007
-      - 🇦🇺 AU 008
-      - 🇨🇦 CA 009
-      - 🇨🇦 CA 010
-      - 🇨🇦 CA 011
-      - 🇨🇦 CA 012
-      - 🇨🇦 CA 013
-      - 🇨🇦 CA 014
-      - 🇨🇦 CA 015
-      - 🇨🇦 CA 016
-      - 🇨🇦 CA 017
-      - 🇨🇦 CA 018
-      - 🇨🇦 CA 019
-      - 🇨🇦 CA 020
-      - 🇨🇦 CA 021
-      - 🇨🇦 CA 022
-      - 🇨🇦 CA 023
-      - 🇨🇦 CA 024
-      - 🇨🇦 CA 025
-      - 🇨🇭 CH 026
-      - 🇩🇪 DE 027
-      - 🇩🇪 DE 028
-      - 🇩🇪 DE 029
-      - 🇩🇪 DE 030
-      - 🇩🇪 DE 031
-      - 🇩🇪 DE 032
-      - 🇫🇷 FR 033
-      - 🇫🇷 FR 034
-      - 🇫🇷 FR 035
-      - 🇫🇷 FR 036
-      - 🇫🇷 FR 037
-      - 🇫🇷 FR 038
-      - 🇫🇷 FR 039
-      - 🇬🇷 GR 040
-      - 🇭🇰 HK 041
-      - 🇭🇺 HU 042
-      - 🇮🇩 ID 043
-      - 🇮🇱 IL 044
-      - 🇯🇵 JP 045
-      - 🇲🇾 MY 046
-      - 🇳🇴 NO 047
-      - 🇳🇴 NO 048
-      - 🇵🇭 PH 049
-      - 🇵🇭 PH 050
-      - 🇸🇪 SE 051
-      - 🇸🇪 SE 052
-      - 🇸🇪 SE 053
-      - 🇹🇼 TW 054
-      - 🇺🇸 US 055
-      - 🇺🇸 US 056
-      - 🇺🇸 US 057
-      - 🇺🇸 US 058
-      - 🇺🇸 US 059
-      - 🇺🇸 US 060
-      - 🇺🇸 US 061
-      - 🇺🇸 US 062
-      - 🇺🇸 US 063
-      - 🇺🇸 US 064
-      - 🇺🇸 US 065
-      - 🇺🇸 US 066
-      - 🇺🇸 US 067
-      - 🇺🇸 US 068
-      - 🇺🇸 US 069
-      - 🇺🇸 US 070
-      - 🇺🇸 US 071
-      - 🇺🇸 US 072
-      - 🇺🇸 US 073
-      - 🇺🇸 US 074
-      - 🇺🇸 US 075
-      - 🇺🇸 US 076
-      - 🇺🇸 US 077
-      - 🇺🇸 US 078
-      - 🇺🇸 US 079
-      - 🇺🇸 US 080
-      - 🇺🇸 US 081
-      - 🇺🇸 US 082
-      - 🇺🇸 US 083
-      - 🇺🇸 US 084
-      - 🇺🇸 US 085
-      - 🇺🇸 US 086
-      - 🇺🇸 US 087
-      - 🇺🇸 US 088
-      - 🇺🇸 US 089
-      - 🇺🇸 US 090
-      - 🇺🇸 US 091
-      - 🇺🇸 US 092
-      - 🇺🇸 US 093
-      - 🇺🇸 US 094
-      - 🇺🇸 US 095
-      - 🇺🇸 US 096
-      - 🇺🇸 US 097
-      - 🇺🇸 US 098
-      - 🇺🇸 US 099
-      - 🇺🇸 US 100
-      - 🇺🇸 US 101
-      - 🇺🇸 US 102
-      - 🇺🇸 US 103
-      - 🇺🇸 US 104
-      - 🇺🇸 US 105
-      - 🇻🇳 VN 106
-      - 🇿🇦 ZA 107
-      - 🏁 ZZ 108
-      - 🏁 ZZ 109
-      - 🏁 ZZ 110
-      - 🏁 ZZ 111
-      - 🏁 ZZ 112
-      - 🏁 ZZ 113
-      - 🏁 ZZ 114
-      - 🏁 ZZ 115
-      - 🏁 ZZ 116
-      - 🏁 ZZ 117
-      - 🏁 ZZ 118
+      - 🏝 按序连接
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
+      - 🇺🇸 US 01
+      - 🇺🇸 US 02
+      - 🇺🇸 US 03
+      - 🇺🇸 US 04
+      - 🇺🇸 US 05
+      - 🇺🇸 US 06
+      - 🇺🇸 US 07
+      - 🇺🇸 US 08
+      - 🇺🇸 US 09
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇺🇸 US 14
+      - 🇺🇸 US 15
+      - 🇺🇸 US 16
+      - 🇺🇸 US 17
+      - 🇺🇸 US 18
+      - 🇺🇸 US 19
+      - 🇺🇸 US 20
+      - 🇺🇸 US 21
+      - 🇺🇸 US 22
+      - 🇺🇸 US 23
+      - 🇺🇸 US 24
+      - 🇺🇸 US 25
+      - 🇺🇸 US 26
+      - 🇸🇪 SE 01
+      - 🇸🇪 SE 02
+      - 🇸🇪 SE 03
+      - 🇫🇷 FR 01
+      - 🇫🇷 FR 02
+      - 🇫🇷 FR 03
+      - 🇫🇷 FR 04
+      - 🇫🇷 FR 05
+      - 🇨🇦 CAN 01
+      - 🇨🇦 CAN 02
+      - 🇨🇦 CAN 03
+      - 🇨🇦 CAN 04
+      - 🇨🇦 CAN 05
+      - 🇨🇦 CAN 06
+      - 🇨🇦 CAN 07
+      - 🇨🇦 CAN 08
+      - 🇨🇦 CAN 09
+      - 🇨🇦 CAN 10
+      - 🇨🇦 CAN 11
+      - 🇨🇦 CAN 12
+      - 🇦🇺 AUS 01
+      - 🇦🇺 AUS 02
+      - 🇩🇪 GER 01    
+  # url-test 自动选择与指定URL测速后，延迟最短的服务器
   - name: 🪄 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇦🇹 AT 001
-      - 🇦🇺 AU 002
-      - 🇦🇺 AU 003
-      - 🇦🇺 AU 004
-      - 🇦🇺 AU 005
-      - 🇦🇺 AU 006
-      - 🇦🇺 AU 007
-      - 🇦🇺 AU 008
-      - 🇨🇦 CA 009
-      - 🇨🇦 CA 010
-      - 🇨🇦 CA 011
-      - 🇨🇦 CA 012
-      - 🇨🇦 CA 013
-      - 🇨🇦 CA 014
-      - 🇨🇦 CA 015
-      - 🇨🇦 CA 016
-      - 🇨🇦 CA 017
-      - 🇨🇦 CA 018
-      - 🇨🇦 CA 019
-      - 🇨🇦 CA 020
-      - 🇨🇦 CA 021
-      - 🇨🇦 CA 022
-      - 🇨🇦 CA 023
-      - 🇨🇦 CA 024
-      - 🇨🇦 CA 025
-      - 🇨🇭 CH 026
-      - 🇩🇪 DE 027
-      - 🇩🇪 DE 028
-      - 🇩🇪 DE 029
-      - 🇩🇪 DE 030
-      - 🇩🇪 DE 031
-      - 🇩🇪 DE 032
-      - 🇫🇷 FR 033
-      - 🇫🇷 FR 034
-      - 🇫🇷 FR 035
-      - 🇫🇷 FR 036
-      - 🇫🇷 FR 037
-      - 🇫🇷 FR 038
-      - 🇫🇷 FR 039
-      - 🇬🇷 GR 040
-      - 🇭🇰 HK 041
-      - 🇭🇺 HU 042
-      - 🇮🇩 ID 043
-      - 🇮🇱 IL 044
-      - 🇯🇵 JP 045
-      - 🇲🇾 MY 046
-      - 🇳🇴 NO 047
-      - 🇳🇴 NO 048
-      - 🇵🇭 PH 049
-      - 🇵🇭 PH 050
-      - 🇸🇪 SE 051
-      - 🇸🇪 SE 052
-      - 🇸🇪 SE 053
-      - 🇹🇼 TW 054
-      - 🇺🇸 US 055
-      - 🇺🇸 US 056
-      - 🇺🇸 US 057
-      - 🇺🇸 US 058
-      - 🇺🇸 US 059
-      - 🇺🇸 US 060
-      - 🇺🇸 US 061
-      - 🇺🇸 US 062
-      - 🇺🇸 US 063
-      - 🇺🇸 US 064
-      - 🇺🇸 US 065
-      - 🇺🇸 US 066
-      - 🇺🇸 US 067
-      - 🇺🇸 US 068
-      - 🇺🇸 US 069
-      - 🇺🇸 US 070
-      - 🇺🇸 US 071
-      - 🇺🇸 US 072
-      - 🇺🇸 US 073
-      - 🇺🇸 US 074
-      - 🇺🇸 US 075
-      - 🇺🇸 US 076
-      - 🇺🇸 US 077
-      - 🇺🇸 US 078
-      - 🇺🇸 US 079
-      - 🇺🇸 US 080
-      - 🇺🇸 US 081
-      - 🇺🇸 US 082
-      - 🇺🇸 US 083
-      - 🇺🇸 US 084
-      - 🇺🇸 US 085
-      - 🇺🇸 US 086
-      - 🇺🇸 US 087
-      - 🇺🇸 US 088
-      - 🇺🇸 US 089
-      - 🇺🇸 US 090
-      - 🇺🇸 US 091
-      - 🇺🇸 US 092
-      - 🇺🇸 US 093
-      - 🇺🇸 US 094
-      - 🇺🇸 US 095
-      - 🇺🇸 US 096
-      - 🇺🇸 US 097
-      - 🇺🇸 US 098
-      - 🇺🇸 US 099
-      - 🇺🇸 US 100
-      - 🇺🇸 US 101
-      - 🇺🇸 US 102
-      - 🇺🇸 US 103
-      - 🇺🇸 US 104
-      - 🇺🇸 US 105
-      - 🇻🇳 VN 106
-      - 🇿🇦 ZA 107
-      - 🏁 ZZ 108
-      - 🏁 ZZ 109
-      - 🏁 ZZ 110
-      - 🏁 ZZ 111
-      - 🏁 ZZ 112
-      - 🏁 ZZ 113
-      - 🏁 ZZ 114
-      - 🏁 ZZ 115
-      - 🏁 ZZ 116
-      - 🏁 ZZ 117
-      - 🏁 ZZ 118
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
+      - 🇺🇸 US 01
+      - 🇺🇸 US 02
+      - 🇺🇸 US 03
+      - 🇺🇸 US 04
+      - 🇺🇸 US 05
+      - 🇺🇸 US 06
+      - 🇺🇸 US 07
+      - 🇺🇸 US 08
+      - 🇺🇸 US 09
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇺🇸 US 14
+      - 🇺🇸 US 15
+      - 🇺🇸 US 16
+      - 🇺🇸 US 17
+      - 🇺🇸 US 18
+      - 🇺🇸 US 19
+      - 🇺🇸 US 20
+      - 🇺🇸 US 21
+      - 🇺🇸 US 22
+      - 🇺🇸 US 23
+      - 🇺🇸 US 24
+      - 🇺🇸 US 25
+      - 🇺🇸 US 26
+      - 🇸🇪 SE 01
+      - 🇸🇪 SE 02
+      - 🇸🇪 SE 03
+      - 🇫🇷 FR 01
+      - 🇫🇷 FR 02
+      - 🇫🇷 FR 03
+      - 🇫🇷 FR 04
+      - 🇫🇷 FR 05
+      - 🇨🇦 CAN 01
+      - 🇨🇦 CAN 02
+      - 🇨🇦 CAN 03
+      - 🇨🇦 CAN 04
+      - 🇨🇦 CAN 05
+      - 🇨🇦 CAN 06
+      - 🇨🇦 CAN 07
+      - 🇨🇦 CAN 08
+      - 🇨🇦 CAN 09
+      - 🇨🇦 CAN 10
+      - 🇨🇦 CAN 11
+      - 🇨🇦 CAN 12
+      - 🇦🇺 AUS 01
+      - 🇦🇺 AUS 02
+      - 🇩🇪 GER 01 
+  # fallback 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，自动选择服务器
+  - name: 🏝 按序连接
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
+      - 🇺🇸 US 01
+      - 🇺🇸 US 02
+      - 🇺🇸 US 03
+      - 🇺🇸 US 04
+      - 🇺🇸 US 05
+      - 🇺🇸 US 06
+      - 🇺🇸 US 07
+      - 🇺🇸 US 08
+      - 🇺🇸 US 09
+      - 🇺🇸 US 10
+      - 🇺🇸 US 11
+      - 🇺🇸 US 12
+      - 🇺🇸 US 13
+      - 🇺🇸 US 14
+      - 🇺🇸 US 15
+      - 🇺🇸 US 16
+      - 🇺🇸 US 17
+      - 🇺🇸 US 18
+      - 🇺🇸 US 19
+      - 🇺🇸 US 20
+      - 🇺🇸 US 21
+      - 🇺🇸 US 22
+      - 🇺🇸 US 23
+      - 🇺🇸 US 24
+      - 🇺🇸 US 25
+      - 🇺🇸 US 26
+      - 🇸🇪 SE 01
+      - 🇸🇪 SE 02
+      - 🇸🇪 SE 03
+      - 🇫🇷 FR 01
+      - 🇫🇷 FR 02
+      - 🇫🇷 FR 03
+      - 🇫🇷 FR 04
+      - 🇫🇷 FR 05
+      - 🇨🇦 CAN 01
+      - 🇨🇦 CAN 02
+      - 🇨🇦 CAN 03
+      - 🇨🇦 CAN 04
+      - 🇨🇦 CAN 05
+      - 🇨🇦 CAN 06
+      - 🇨🇦 CAN 07
+      - 🇨🇦 CAN 08
+      - 🇨🇦 CAN 09
+      - 🇨🇦 CAN 10
+      - 🇨🇦 CAN 11
+      - 🇨🇦 CAN 12
+      - 🇦🇺 AUS 01
+      - 🇦🇺 AUS 02
+      - 🇩🇪 GER 01 
+
 rules:
  - DOMAIN-SUFFIX,local,DIRECT
  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
@@ -903,4 +778,4 @@ rules:
  - DOMAIN-KEYWORD,Thunder,DIRECT
  - DOMAIN-KEYWORD,XLLiveUD,DIRECT
  - GEOIP,CN,DIRECT
- - MATCH,🚀 节点选择
+ - MATCH,🛸 节点选择
