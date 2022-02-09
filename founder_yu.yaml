@@ -51,7 +51,8 @@ proxies:
   - { name: 🇮🇱 IL 044,type: ss,server: 212.199.61.55,port:8389,cipher: chacha20-ietf-poly1305,password: scDj68fv6xkMg2np9RgW}
   - { name: 🇯🇵 JP 045,type: ss,server: 172.105.244.165,port:8090,cipher: aes-256-gcm,password: PCnnH6SQSnfoS27}
   - { name: 🇲🇾 MY 046,type: ss,server: 223.25.246.4,port:8388,cipher: chacha20-ietf-poly1305,password: w4GUD28Bw9uCMdbc2pqA}
-  - { name: 🇳🇴 NO 047,type: ss,server: 46.29.219.246,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}name: 🇳🇴 NO 048,type: ss,server: 46.29.219.246,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
+  - { name: 🇳🇴 NO 047,type: ss,server: 46.29.219.246,port:5004,cipher: aes-256-gcm,password: g5MeD6Ft3CWlJId}
+  - { name: 🇳🇴 NO 048,type: ss,server: 46.29.219.246,port:2376,cipher: aes-256-gcm,password: faBAoD54k87UJG7}
   - { name: 🇵🇭 PH 049,type: ss,server: 188.214.125.106,port:8388,cipher: chacha20-ietf-poly1305,password: Zq4srheW4eeqMfGeWMTG}
   - { name: 🇵🇭 PH 050,type: ss,server: 188.214.125.106,port:8389,cipher: chacha20-ietf-poly1305,password: Zq4srheW4eeqMfGeWMTG}
   - { name: 🇸🇪 SE 051,type: ss,server: 167.88.63.61,port:8009,cipher: aes-256-gcm,password: XKFKl2rULjIp74}
@@ -175,6 +176,7 @@ proxy-groups:
       - 🇯🇵 JP 045
       - 🇲🇾 MY 046
       - 🇳🇴 NO 047
+      - 🇳🇴 NO 048
       - 🇵🇭 PH 049
       - 🇵🇭 PH 050
       - 🇸🇪 SE 051
@@ -297,6 +299,7 @@ proxy-groups:
       - 🇯🇵 JP 045
       - 🇲🇾 MY 046
       - 🇳🇴 NO 047
+      - 🇳🇴 NO 048
       - 🇵🇭 PH 049
       - 🇵🇭 PH 050
       - 🇸🇪 SE 051
