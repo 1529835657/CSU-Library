@@ -22,7 +22,7 @@ dns:
 
 proxies:
   - {name: 🇯🇵 JP 01, type: ss, server: 45.67.53.250, port: 443, cipher: aes-256-cfb, password: www.xbvpn.com}
-  - {name: 🇯🇵 JP 02, type: ss, server: sgp2.oyvpnserver.com, port: 3572, cipher: rc4-md5, password: cht1997...///}
+  - {name: 🇯🇵 JP 02, type: ss, server: 45.67.53.250, port: 443, cipher: aes-256-cfb, password: www.xbvpn.com}
   - {name: 🇺🇸 US 01, type: ss, server: 167.88.63.61, port: 8009, cipher: aes-256-gcm, password: XKFKl2rULjIp74}
   - {name: 🇺🇸 US 02, type: ss, server: 172.99.190.39, port: 5003, cipher: aes-256-gcm, password: g5MeD6Ft3CWlJId}
   - {name: 🇺🇸 US 03, type: ss, server: 134.195.196.81, port: 7307, cipher: aes-256-gcm, password: FoOiGlkAA9yPEGP}
@@ -69,18 +69,16 @@ proxies:
   - {name: 🇨🇦 CAN 10, type: ss, server: 134.195.196.147, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
   - {name: 🇨🇦 CAN 11, type: ss, server: 198.57.27.184, port: 8080, cipher: aes-256-gcm, password: KixLvKzwjekG00rm}
   - {name: 🇨🇦 CAN 12, type: ss, server: 134.195.196.193, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
-  - {name: 🇦🇺 AUS 01, type: vmess, server: 202.61.141.130, port: 443, uuid: aba50dd4-5484-3b05-b14a-4661caf862d5, alterId: 4, cipher: auto, udp: true, tls: true, network: ws, ws-path: /ws, ws-headers: {Host: 202.61.141.130}}
+  - {name: 🇦🇺 AUS 01, type: ss, server: 172.105.171.80, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
   - {name: 🇦🇺 AUS 02, type: ss, server: 172.105.171.80, port: 2376, cipher: aes-256-gcm, password: faBAoD54k87UJG7}
   - {name: 🇩🇪 GER 01, type: ss, server: 145.239.1.100, port: 8090, cipher: aes-256-gcm, password: PCnnH6SQSnfoS27}
 proxy-groups:
-  # select 用来允许用户手动选择 代理服务器 或 服务器组
   - name: 🛸 节点选择
     type: select
     proxies:
       - 🪄 自动选择
       - 🏝 按序连接
-      - 🇯🇵 JP 01
-      - 🇯🇵 JP 02
+      - DIRECT
       - 🇺🇸 US 01
       - 🇺🇸 US 02
       - 🇺🇸 US 03
@@ -107,6 +105,8 @@ proxy-groups:
       - 🇺🇸 US 24
       - 🇺🇸 US 25
       - 🇺🇸 US 26
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
       - 🇸🇪 SE 01
       - 🇸🇪 SE 02
       - 🇸🇪 SE 03
@@ -136,8 +136,6 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇯🇵 JP 01
-      - 🇯🇵 JP 02
       - 🇺🇸 US 01
       - 🇺🇸 US 02
       - 🇺🇸 US 03
@@ -164,6 +162,8 @@ proxy-groups:
       - 🇺🇸 US 24
       - 🇺🇸 US 25
       - 🇺🇸 US 26
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
       - 🇸🇪 SE 01
       - 🇸🇪 SE 02
       - 🇸🇪 SE 03
@@ -187,14 +187,12 @@ proxy-groups:
       - 🇦🇺 AUS 01
       - 🇦🇺 AUS 02
       - 🇩🇪 GER 01 
-  # fallback 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，自动选择服务器
+
   - name: 🏝 按序连接
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 🇯🇵 JP 01
-      - 🇯🇵 JP 02
       - 🇺🇸 US 01
       - 🇺🇸 US 02
       - 🇺🇸 US 03
@@ -221,6 +219,8 @@ proxy-groups:
       - 🇺🇸 US 24
       - 🇺🇸 US 25
       - 🇺🇸 US 26
+      - 🇯🇵 JP 01
+      - 🇯🇵 JP 02
       - 🇸🇪 SE 01
       - 🇸🇪 SE 02
       - 🇸🇪 SE 03
