@@ -78,7 +78,8 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - 🎯 直连- 🇨🇦_CA_加拿大_1
+      - 🎯 直连
+      - 🇨🇦_CA_加拿大_1
       - 🇺🇸_US_美国->🇯🇵_JP_日本_2
       - 🇨🇦_CA_加拿大_3
       - 🇺🇸_US_美国->🇮🇳_IN_印度_4
@@ -223,6 +224,7 @@ proxy-groups:
     type: select
     proxies:
       - 🎯 直连
+      - ♻️ 自动选择
       - 🛩 节点选择
       - 🇨🇦_CA_加拿大_1
       - 🇺🇸_US_美国->🇯🇵_JP_日本_2
@@ -295,9 +297,9 @@ proxy-groups:
   - name: 🍎 苹果服务
     type: select
     proxies:
-      - 🛩 节点选择
       - 🎯 直连
       - ♻️ 自动选择
+      - 🛩 节点选择
       - 🇨🇦_CA_加拿大_1
       - 🇺🇸_US_美国->🇯🇵_JP_日本_2
       - 🇨🇦_CA_加拿大_3
