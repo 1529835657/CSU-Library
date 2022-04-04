@@ -1,2 +1,2 @@
 # ClashX
-ClashX个人订阅
+ClashX配置文件模板（无节点信息）
