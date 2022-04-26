@@ -24,8 +24,8 @@ jobs:
         
     - name: Reserve
       run: |
-        user = '${{ secrets.USER }}'
-        pwd = '${{ secrets.PWD }}'
+        user='${{ secrets.USER }}'
+        pwd='${{ secrets.PWD }}'
         python3 helper.py --action 'reserve' --userid $user --password $pwd
     - name: Commit
       run: |
