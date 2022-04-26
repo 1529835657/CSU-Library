@@ -7,7 +7,7 @@ on:
     - cron: '1 22 * * *'
 
 jobs:
-  check-in:
+  reserve:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
       run: |
         user='${{ secrets.USER }}'
         pwd='${{ secrets.PWD }}'
-        python3 helper.py --action 'reserve' --userid ${user} --password ${pwd}
+        python3 helper.py --action 'reserve' --userid $user --password $pwd
         done
     - name: Commit
       run: |
