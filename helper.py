@@ -53,12 +53,12 @@ def getAesString(data, key, iv):
 
 
 class CSULibrary(object):
-    client = requests.Session()
 
     def __init__(self, userid, password):
-        seat_data = pandas.read_csv('seat.csv')
         self.userid = userid
         self.password = password
+        self.client = requests.Session()
+        seat_data = pandas.read_csv('seat.csv')
         config = configparser.ConfigParser()
         config.read('config.ini')
         self.seatno = eval(config["DATABASE"]["SEAT"])
