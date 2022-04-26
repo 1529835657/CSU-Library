@@ -6,3 +6,4 @@
 2022-04-26 15:29:00,811	INFO	请刷新页面后重新操作。
 2022-04-26 15:40:14,167	ERROR	该空间当前状态不可预约
 2022-04-26 15:43:46,544	ERROR	当前座位状态不应当签到
+2022-04-26 22:23:10,534	ERROR	HTTPConnectionPool(host='libzw.csu.edu.cn', port=80): Max retries exceeded with url: /api.php/v3areadays/48 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faf0a667220>: Failed to establish a new connection: [Errno 110] Connection timed out'))
