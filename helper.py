@@ -208,7 +208,7 @@ class CSULibrary(object):
         params = {
             "user": self.userid
         }
-        response = requests.get(url, headers=headers, params=params)
+        response = self.client.get(url, headers=headers, params=params)
         if len(response.json()['data']) == 0:
             raise Exception("当前没有正在使用中的座位或研讨间")
         return response.json()['data'][0]
