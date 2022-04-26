@@ -24,10 +24,9 @@ jobs:
         
     - name: CheckIn
       run: |
-        user='${{ secrets.USER }}'
-        pwd='${{ secrets.PWD }}'
+        user = '${{ secrets.USER }}'
+        pwd = '${{ secrets.PWD }}'
         python3 helper.py --action 'checkIn' --userid $user --password $pwd
-        done
     - name: Commit
       run: |
         git config --global user.email founder.yu@foxmail.com
