@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '30 23 * * *'
+    - cron: '07 23 * * *'
 
 jobs:
   check-in:
