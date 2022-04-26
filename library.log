@@ -1,2 +1,3 @@
 
 2022-04-26 13:57:19,134	ERROR	HTTPConnectionPool(host='libzw.csu.edu.cn', port=80): Max retries exceeded with url: /api.php/currentuse?user=8204191112 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe29f377460>: Failed to establish a new connection: [Errno 110] Connection timed out'))
+2022-04-26 14:30:11,970	INFO	请刷新页面后重新操作。
