@@ -2,7 +2,7 @@
 中南大学图书馆预约、签到、签离助手。
 
 ### 配置步骤
-1. 将代码Fork到自己仓库。
+1. 将项目Fork到自己仓库。
 
 2. 配置私密参数：依次点击上栏 [Setting] -> [Security] -> [Secrets] -> [Actions] -> [New repository secrets] 添加学号和门户网密码，示例如下：
     | Name |    Value   |
