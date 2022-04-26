@@ -1,0 +1,40 @@
+name: CSU Library Reserve
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '1 22 * * *'
+
+jobs:
+  check-in:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Python
+      run: |
+        sudo apt update && \
+        sudo apt install python3
+      
+    - name: requirements
+      run: |
+        pip3 install -r requirements.txt
+        
+    - name: Reserve
+      run: |
+        user='${{ secrets.USER }}'
+        pwd='${{ secrets.PWD }}'
+        python3 helper.py --action 'reserve' --userid ${user} --password ${pwd}
+        done
+    - name: Commit
+      run: |
+        git config --global user.email founder.yu@foxmail.com
+        git config --global user.name founder-yu
+        git add .
+        git commit -m "Update library.log" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
