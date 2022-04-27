@@ -9,3 +9,4 @@
 2022-04-26 22:23:10,534	ERROR	HTTPConnectionPool(host='libzw.csu.edu.cn', port=80): Max retries exceeded with url: /api.php/v3areadays/48 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7faf0a667220>: Failed to establish a new connection: [Errno 110] Connection timed out'))
 2022-04-26 23:31:15,126	INFO	签到成功
 2022-04-27 02:06:15,851	INFO	预约成功<br/>您已违约1次,详情请登录web端或联系管理员
+2022-04-27 02:27:33,608	ERROR	该空间当前状态不可预约
