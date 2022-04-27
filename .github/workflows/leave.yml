@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '50 12 * * *'
+    - cron: '00 13 * * *'
 
 jobs:
   leave:
