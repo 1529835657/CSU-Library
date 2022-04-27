@@ -124,9 +124,7 @@ class CSULibrary(object):
             url = "http://libzw.csu.edu.cn/api.php/spaces/" + \
                 str(self.seatid[i])+"/book"
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36',
-                'X-Requested-With': 'XMLHttpRequest',
-                'Referer': 'http://libzw.csu.edu.cn/home/web/seat/area/1',
+                'Referer': 'http://libzw.csu.edu.cn/home/web/seat/area/1'
             }
             data = {
                 'access_token': access_token,
@@ -223,7 +221,7 @@ class CSULibrary(object):
         headers = {
             'Referer': 'http://libzw.csu.edu.cn/home/web/seat/area/1'
         }
-        response = requests.get(url, headers=headers)
+        response = self.client.get(url, headers=headers)
         return response.json()["data"]["list"][0]["id"], response.json()["data"]["list"][1]["id"]
 
 
