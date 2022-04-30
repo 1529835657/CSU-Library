@@ -29,8 +29,8 @@ jobs:
         python3 helper.py --action 'checkIn' --userid $user --password $pwd
     - name: Commit
       run: |
-        git config --global user.email founder.yu@foxmail.com
-        git config --global user.name founder-yu
+        git config --global user.email 1529835657@qq.com
+        git config --global user.name 1529835657
         git add .
         git commit -m "Update library.log" -a
     - name: Push changes
