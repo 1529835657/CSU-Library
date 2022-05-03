@@ -6,6 +6,18 @@ on:
   schedule:
     - cron: '00 22 * * *'
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
+  issues: write
+  packages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+  
 jobs:
   reserve:
     runs-on: ubuntu-latest
