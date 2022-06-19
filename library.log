@@ -132,3 +132,4 @@
 2022-06-18 21:37:46,985	ERROR	HTTPConnectionPool(host='libzw.csu.edu.cn', port=80): Max retries exceeded with url: /cas/index.php?callback=http%3A%2F%2Flibzw.csu.edu.cn%2Fhome%2Fweb%2Ff_second (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7b6931efa0>: Failed to establish a new connection: [Errno 110] Connection timed out'))
 2022-06-18 22:10:10,308	ERROR	HTTPConnectionPool(host='libzw.csu.edu.cn', port=80): Max retries exceeded with url: /cas/index.php?callback=http%3A%2F%2Flibzw.csu.edu.cn%2Fhome%2Fweb%2Ff_second (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f896a9b0d00>: Failed to establish a new connection: [Errno 110] Connection timed out'))
 2022-06-19 21:36:09,627	INFO	预约成功
+2022-06-19 22:08:57,911	ERROR	该空间当前状态不可预约
